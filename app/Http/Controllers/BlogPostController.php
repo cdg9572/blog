@@ -36,8 +36,6 @@ class BlogPostController extends Controller
         ];    
 
         $creatged_blog = BlogPost::create($save_data);
-        
-
 
         return redirect("/blog/{$creatged_blog->id}");
     }
@@ -54,9 +52,10 @@ class BlogPostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BlogPost $blogPost)
+    public function edit($blog_post_id)
     {
-        //
+        $blogPost = BlogPost::find($blog_post_id);
+        return view('blog.edit', ['blogPost' => $blogPost]);
     }
 
     /**

@@ -27,3 +27,5 @@ Route::get('/blog/{blogPost}', [BlogPostController::class, "show"]);
 
 Route::post('/blog/create', [BlogPostController::class, "store"]);
 
+Route::get('/blog/edit/{blog_post_id}', [BlogPostController::class, "edit"]);
+
