@@ -29,3 +29,4 @@ Route::post('/blog/create', [BlogPostController::class, "store"]);
 
 Route::get('/blog/edit/{blog_post_id}', [BlogPostController::class, "edit"]);
 
+Route::put('/blog/edit/{blogPost}', [BlogPostController::class, "update"]);

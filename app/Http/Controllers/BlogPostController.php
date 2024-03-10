@@ -63,7 +63,16 @@ class BlogPostController extends Controller
      */
     public function update(Request $request, BlogPost $blogPost)
     {
-        //
+        $save_data= [
+            'title' => $request->title,
+            'body' => $request->body,
+            'user_id' => 11
+        ];
+
+        $blogPost->update($save_data);
+
+        return redirect("/blog/{$blogPost->id}");
+        
     }
 
     /**
