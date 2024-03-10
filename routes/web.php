@@ -19,7 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('blog', [BlogPostController::class, "index"]);
+Route::get('/blog', [BlogPostController::class, "index"]);
 
-Route::get('blog/{blogPost}', [BlogPostController::class, "show"]);
+Route::get('/blog/create', [BlogPostController::class, "create"]);
+
+Route::get('/blog/{blogPost}', [BlogPostController::class, "show"]);
+
+Route::post('/blog/create', [BlogPostController::class, "store"]);
 
